@@ -12,9 +12,13 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.14",
     "axios": "^1.12.2",
+<<<<<<< HEAD
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.545.0",
+=======
+    "formik": "^2.4.6",
+>>>>>>> 7af4f8af3fec9387a528ff152e3eb0fcd76e1c5f
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-hook-form": "^7.64.0",
@@ -22,7 +26,11 @@
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.9.3",
     "recharts": "^3.2.1",
+<<<<<<< HEAD
     "tailwind-merge": "^3.3.1"
+=======
+    "yup": "^1.7.1"
+>>>>>>> 7af4f8af3fec9387a528ff152e3eb0fcd76e1c5f
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
