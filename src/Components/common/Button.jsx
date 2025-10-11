@@ -5,11 +5,13 @@ const Button = ({ children, background, text, rounded, size, type }) => {
     white: "bg-white",
     "white/75": "bg-white/75",
     blue: "bg-blue",
+    "baby-blue": "bg-baby-blue",
   };
 
   const textClasses = {
     blue: "text-blue",
     white: "text-white",
+    "dark-blue": "text-dark-blue",
   };
   const roundedClasses = {
     lg: "rounded-lg",

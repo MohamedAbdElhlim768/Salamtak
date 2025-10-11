@@ -1,34 +1,25 @@
-
-import './Components/Footer/Footer'
-import './index.css'
-import {createBrowserRouter, RouterProvider} from 'react-router-dom'
-import Layout from './Components/Layout/Layout'
-import Home from './Components/Home/Home'
-import About from './Components/About/About'
-import Contact from './Components/Contact/Contact'
-import Book from './Components/Book/Book'
-import Doctors from './Components/Doctors/Doctors'
-import Login from './Components/Login/Login'
-import Pharmacy from './Components/Pharmacy/Pharmacy'
-import Rigister from './Components/Rigister/Rigister'
-
+import "./index.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Layout from "./pages/Layout";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Login from "./pages/Login";
 
 let routers = createBrowserRouter([
-  {path:'/',element:<Layout/>,children:[
-    {path:'home',element: <Home/>},
-    {path:'about',element: <About/>},
-    {path:'contact',element: <Contact/>},
-    {path:'book',element:<Book/>},
-    {path:'doctors',element:<Doctors/>},
-    {path:'pharmacy',element:<Pharmacy/>},
-    {path:'login',element:<Login/>},
-    {path:'rigister',element:<Rigister/>},
-  ]}
-])
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      { path: "about", element: <About /> },
+    ],
+  },
+  { path: "/login", element: <Login /> },
+]);
 
 export default function App() {
-
-  return <RouterProvider router={routers}/>
-
-  
+  return <RouterProvider router={routers} />;
 }

@@ -1,86 +1,36 @@
-// import React from "react";
-// import { NavLink } from "react-router-dom";
 import { HiOutlineShoppingCart } from "react-icons/hi2";
 import { IoPersonOutline } from "react-icons/io5";
 import { GrFavorite } from "react-icons/gr";
-// import Button from "./Button";
-// const Nav = () => {
-//   return (
-//     <header className="w-full h-24 flex justify-between items-center fixed top-0 left-0 px-5 z-50">
-//       <div className="w-38">
-//         <img src="/assets/logo.png" alt="logo" className="w-full h-full" />
-//       </div>
-//       <nav>
-//         <ul className="text-lg flex items-center gap-10 text-white cursor-pointer">
-//           {/* <NavLink to="/"> */}
-//           <li>Home</li>
-//           {/* </NavLink> */}
-//           {/* <NavLink to="/doctors"> */}
-//           <li>Doctors</li>
-//           {/* </NavLink> */}
-//           {/* <NavLink to="/pharmacy"> */}
-//           <li>Pharmacy</li>
-//           {/* </NavLink> */}
-//           {/* <NavLink to="/book"> */}
-//           <li>Book</li>
-//           {/* </NavLink> */}
-//           {/* <NavLink to="/contact"> */}
-//           <li>Contact</li>
-//           {/* </NavLink> */}
-//         </ul>
-//       </nav>
-
-//       <nav className="flex items-center gap-6">
-//         <ul className="flex items-center gap-2 text-white cursor-pointer text-lg">
-//           <li>
-//             <GrFavorite />
-//           </li>
-//           <li>
-//             <HiOutlineShoppingCart />
-//           </li>
-//           <li>
-//             <IoPersonOutline />
-//           </li>
-//         </ul>
-//         <Button background={"white/75"} text={"blue"}>
-//           Login
-//         </Button>
-//       </nav>
-//     </header>
-//   );
-// };
-
-// export default Nav;
-
-("use client");
-
 import { useState, useEffect } from "react";
 import { Menu, X, Search } from "lucide-react";
 import Button from "./Button";
+import { Link, NavLink } from "react-router-dom";
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scroll, setScroll] = useState(0);
   const navLinks = [
     {
-      href: "#",
+      to: "/",
       text: "Home",
     },
     {
-      href: "#",
+      to: "/doctors",
       text: "Doctors",
     },
     {
-      href: "#",
+      to: "/book",
       text: "Book",
     },
     {
-      href: "#",
+      to: "/pharmacy",
       text: "Pharmacy",
     },
     {
-      href: "#",
+      to: "/contact",
       text: "Contact",
     },
   ];
+
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -91,9 +41,24 @@ const Nav = () => {
       document.body.style.overflow = "auto";
     };
   }, [isMenuOpen]);
+
+  useEffect(() => {
+    function handleScroll() {
+      setScroll(window.scrollY > 50);
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
-      <header className="fixed top-0 z-50 w-full">
+      <header
+        className={`fixed top-0 z-50 w-full transition-all duration-300  ${
+          scroll && "bg-baby-blue/50 backdrop-blur-3xl"
+        } `}
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
             <div className="flex-shrink-0">
@@ -102,13 +67,19 @@ const Nav = () => {
 
             <nav className="hidden md:flex items-center space-x-8">
               {navLinks.map((link) => (
-                <a
+                <NavLink
                   key={link.text}
-                  href={link.href}
-                  className="text-lg  text-white  hover:text-dark-blue  transition-colors duration-300"
+                  to={link.to}
+                  className={({ isActive }) =>
+                    `text-lg transition-colors duration-300 ${
+                      isActive
+                        ? "text-dark-blue"
+                        : "text-white hover:text-dark-blue"
+                    }`
+                  }
                 >
                   {link.text}
-                </a>
+                </NavLink>
               ))}
             </nav>
 
@@ -124,9 +95,11 @@ const Nav = () => {
                   <IoPersonOutline />
                 </li>
               </ul>
-              <Button background={"white/75"} text={"blue"}>
-                Login
-              </Button>
+              <NavLink to="/login">
+                <Button background={"white/75"} text={"blue"}>
+                  Login
+                </Button>
+              </NavLink>
             </nav>
 
             <div className="md:hidden flex items-center">
@@ -166,9 +139,9 @@ const Nav = () => {
       >
         <div className="flex flex-col h-full">
           <div className="flex items-center justify-between px-4">
-            <a href="#" className="flex items-center space-x-2">
+            <Link to="/" className="flex items-center space-x-2">
               <img src="/assets/logo.png" alt="logoImg" className="w-32" />
-            </a>
+            </Link>
             <button
               onClick={() => setIsMenuOpen(false)}
               className="p-2 text-white rounded-md"
@@ -181,22 +154,26 @@ const Nav = () => {
           <nav className="flex-grow px-4">
             <div className="flex flex-col space-y-1">
               {navLinks.map((link) => (
-                <a
+                <NavLink
                   key={link.text}
-                  href={link.href}
-                  className="px-3 py-2 text-base font-medium text-white rounded-md hover:bg-blue"
+                  to={link.to}
+                  className={({ isActive }) =>
+                    `px-3 py-2 text-base font-medium  rounded-md hover:bg-blue 
+                    ${isActive ? "bg-baby-blue text-dark-blue" : "text-white"}
+                    `
+                  }
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.text}
-                </a>
+                </NavLink>
               ))}
             </div>
           </nav>
 
           <div className="p-4 font-bold">
             <Button
-              background={"white/75"}
-              text={"blue"}
+              background={"baby-blue"}
+              text={"dark-blue"}
               rounded={"lg"}
               size={"full"}
             >

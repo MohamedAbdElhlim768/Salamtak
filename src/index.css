@@ -1,14 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=League+Spartan:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=League+Spartan:wght@100..900&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
-
 
 @custom-variant dark (&:is(.dark *));
 
 @theme {
   --color-white: #ffffff;
-  --color-blue:#3A8BAD;
-  --color-dark-blue:#084B5E;
+  --color-blue: #199ac0;
+  --color-dark-blue: #084b5e;
+  --color-baby-blue: #d1e8f0;
+  --color-light-blue: #94d2e1;
 }
 
 @theme inline {
@@ -129,5 +130,4 @@
 
 body {
   font-family: var(--main-font);
-  background-color: aliceblue;
 }
