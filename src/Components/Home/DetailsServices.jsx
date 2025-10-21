@@ -6,7 +6,7 @@ const DetailsServices = () => {
     <section className="flex justify-between items-center relative min-h-[500px] my-20 bg-[url('/assets/background-services.jpg')] w-full bg-cover bg-no-repeat">
       <div className="absolute inset-0 bg-dark-blue/50 z-0"></div>
 
-      <div className="relative z-10 px-2 md:px-10 text-white flex-row">
+      <div className="relative z-10 px-2 md:px-10 text-white flex-row ">
         <div className="flex items-center flex-wrap justify-between">
           <div className="xl:w-[850px]">
             <h1 className="font-bold md:text-8xl text-4xl">
