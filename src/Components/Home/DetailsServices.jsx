@@ -18,7 +18,7 @@ const DetailsServices = () => {
               trusted healthcare solutions designed for your well-being. Our
               team of professional pharmacists ensures you receive accurate
               prescriptions, genuine medications, and expert advice for all your
-              health needs.
+              health needs .
             </p>
             <Button background={"dark-blue"} text={"white"} rounded={"lg"}>
               <span>
