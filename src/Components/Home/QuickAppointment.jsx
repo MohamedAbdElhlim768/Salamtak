@@ -9,7 +9,7 @@ const QuickAppointment = () => {
       <p className="text-4xl font-bold xl:w-1/4 w-full text-blue mb-5 xl:mb-0">
         Book an Appointment Quickly
       </p>
-      <form className="relative xl:after:w-1 after:absolute after:content[''] after:-left-5 after:rounded after:h-34 after:w-0 after:bg-blue xl:w-3/4 w-full grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 items-center gap-3">
+      <form className="relative xl:after:w-0.5 after:absolute after:content[''] after:-left-3 after:rounded after:h-28 after:w-0 after:bg-blue xl:w-3/4 w-full grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 items-center gap-3">
         <input type="text" placeholder="name" className={styleInput} />
         <input type="phone" placeholder="phone" className={styleInput} />
         <input type="date" placeholder="date" className={styleInput} />

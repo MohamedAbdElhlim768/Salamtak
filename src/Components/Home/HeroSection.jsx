@@ -4,7 +4,7 @@ import QuickAppointment from "./QuickAppointment";
 
 const HeroSection = () => {
   return (
-    <section className="relative bg-[url('/assets/background.png')] w-full min-h-screen bg-cover bg-no-repeat px-10">
+    <section className="relative bg-[url('/assets/background.png')] w-full min-h-screen bg-cover bg-no-repeat px-2 md:px-10 pb-10">
       <div className="absolute inset-0 bg-[#1E8DB359]"></div>
 
       <div className="relative z-10">

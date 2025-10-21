@@ -71,11 +71,14 @@ const Nav = () => {
                   key={link.text}
                   to={link.to}
                   className={({ isActive }) =>
-                    `text-lg transition-colors duration-300 ${
-                      isActive
-                        ? "text-dark-blue"
-                        : "text-white hover:text-dark-blue"
-                    }`
+                    `text-lg transition-colors duration-300
+                  ${scroll && "!text-dark-blue"}
+                  ${
+                    isActive
+                      ? "text-dark-blue"
+                      : "text-white hover:text-dark-blue"
+                  }
+                    `
                   }
                 >
                   {link.text}
@@ -84,14 +87,30 @@ const Nav = () => {
             </nav>
 
             <nav className="hidden md:flex items-center space-x-3">
-              <ul className="flex items-center gap-2">
-                <li className="text-white  hover:text-dark-blue transition-colors cursor-pointer">
+              <ul
+                className={`flex items-center gap-2 ${
+                  scroll && "!text-dark-blue"
+                } `}
+              >
+                <li
+                  className={`text-white  hover:text-dark-blue transition-colors cursor-pointer ${
+                    scroll && "!text-dark-blue"
+                  }`}
+                >
                   <GrFavorite />
                 </li>
-                <li className="text-white  hover:text-dark-blue transition-colors cursor-pointer">
+                <li
+                  className={`text-white  hover:text-dark-blue transition-colors cursor-pointer ${
+                    scroll && "!text-dark-blue"
+                  }`}
+                >
                   <HiOutlineShoppingCart />
                 </li>
-                <li className="text-white  hover:text-dark-blue transition-colors cursor-pointer">
+                <li
+                  className={`text-white  hover:text-dark-blue transition-colors cursor-pointer ${
+                    scroll && "!text-dark-blue"
+                  }`}
+                >
                   <IoPersonOutline />
                 </li>
               </ul>

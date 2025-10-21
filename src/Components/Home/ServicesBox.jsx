@@ -17,8 +17,7 @@ const ServicesBox = ({ data, index }) => {
             index === 1 ? "text-dark-blue" : "text-gray-400"
           }  text-lg`}
         >
-          {" "}
-          {data.description}{" "}
+          {data.description}
         </p>
       </div>
     </div>

@@ -10,6 +10,8 @@
   --color-dark-blue: #084b5e;
   --color-baby-blue: #d1e8f0;
   --color-light-blue: #94d2e1;
+  --color-gray: #99a1af;
+  --color-light-gray: #d9d9d9;
 }
 
 @theme inline {

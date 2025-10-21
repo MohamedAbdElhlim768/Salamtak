@@ -20,7 +20,7 @@ const Services = () => {
     },
   ];
   return (
-    <section className="xl:w-5xl w-[90%] bg-baby-blue/20 mx-auto rounded-4xl mt-30">
+    <section className="xl:w-5xl w-[95%] bg-baby-blue/20 mx-auto rounded-4xl md:my-30 my-10">
       <div className="w-fit bg-white text-4xl font-semibold pb-5 pl-5 pr-10 rounded-br-4xl">
         <h1 className="text-blue"> Services We Provide to </h1>
         <h1 className="text-dark-blue">

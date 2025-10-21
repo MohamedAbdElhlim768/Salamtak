@@ -6,6 +6,7 @@ const Button = ({ children, background, text, rounded, size, type }) => {
     "white/75": "bg-white/75",
     blue: "bg-blue",
     "baby-blue": "bg-baby-blue",
+    "dark-blue": "bg-dark-blue",
   };
 
   const textClasses = {
@@ -25,7 +26,7 @@ const Button = ({ children, background, text, rounded, size, type }) => {
         roundedClasses[rounded] || ""
       }  ${
         size === "full" ? "w-full" : ""
-      } py-1.5 px-6 rounded-full cursor-pointer`}
+      } py-2 px-6 rounded-full cursor-pointer flex items-center gap-2 justify-center`}
     >
       {children}
     </button>
