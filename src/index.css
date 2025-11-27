@@ -3,6 +3,28 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+/* تعديل شكل الكونتينر */
+.FlagSelect {
+  width: 100%;
+}
+
+/* الزر الرئيسي */
+.FlagSelect button {
+  border-radius: 9999px !important; /* rounded-full */
+  border: 1px solid var( --chart-3) !important;
+  padding: 10px 14px !important;
+  background: transparent !important;
+  color: var(--foreground) !important;
+  width: 100%;
+}
+
+/* قائمة الدول */
+.FlagSelect .flag-select__options {
+  border-radius: 16px !important;
+  border: 1px solid var(--input) !important;
+  background: var(--background) !important;
+}
+
 
 @theme {
   --color-white: #ffffff;
